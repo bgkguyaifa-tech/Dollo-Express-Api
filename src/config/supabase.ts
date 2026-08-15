@@ -3,12 +3,16 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const supabaseUrl = process.env.SUPABASE_URL as string;
-const supabaseAnonKey = process.env.SUPABASE_ANON_KEY as string;
+const supabaseUrl = process.env.SUPABASE_URL;
+const supabaseAnonKey = process.env.SUPABASE_ANON_KEY;
 
-const supabase = createClient(
+if (!supabaseUrl || !supabaseAnonKey) {
+  throw new Error(
+    "SUPABASE_URL and SUPABASE_ANON_KEY must be defined in the environment variables"
+  );
+}
+
+export const supabase = createClient(
   supabaseUrl,
   supabaseAnonKey
 );
-
-export default supabase;

@@ -1,16 +1,25 @@
 {
   "name": "dollo-express-api",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "RESTful API built with Node.js, Express, TypeScript, and Supabase",
+  "main": "dist/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "ts-node src/app.ts",
+    "build": "tsc",
+    "start": "node dist/app.js",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/bgkguyaifa-tech/Dollo-Express-Api.git"
   },
-  "keywords": [],
+  "keywords": [
+    "nodejs",
+    "express",
+    "typescript",
+    "supabase",
+    "rest-api"
+  ],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
