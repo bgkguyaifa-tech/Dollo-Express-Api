@@ -2,11 +2,11 @@
   "name": "dollo-express-api",
   "version": "1.0.0",
   "description": "RESTful API built with Node.js, Express, TypeScript, and Supabase",
-  "main": "dist/app.js",
+  "main": "dist/server.js",
   "scripts": {
-    "dev": "ts-node src/app.ts",
+    "dev": "ts-node src/server.ts",
     "build": "tsc",
-    "start": "node dist/app.js",
+    "start": "node dist/server.js",
     "test": "jest"
   },
   "repository": {
