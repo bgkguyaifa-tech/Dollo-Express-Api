@@ -1,4 +1,4 @@
-# Dollo-Express-ApiDollo-Express-Api
+Dollo Express API
 
 A RESTful API built with Node.js, Express, TypeScript, and Supabase.
 
@@ -7,6 +7,7 @@ Features
 - User signup and login
 - Supabase authentication
 - Bearer token authentication
+- Protected task routes
 - Create tasks
 - Get all tasks
 - Get a single task
@@ -27,22 +28,28 @@ Tech Stack
 
 Project Structure
 
-src/
-├── config/
-│   └── supabase.ts
-├── controllers/
-│   ├── auth.ts
-│   └── tasks.ts
-├── middleware/
-│   └── auth.ts
-├── routes/
-│   ├── auth.ts
-│   └── tasks.ts
-├── services/
-│   └── tasks.ts
-├── types/
-│   └── task.ts
-└── app.ts
+dollo-express-api/
+├── src/
+│   ├── config/
+│   │   └── supabase.ts
+│   ├── controllers/
+│   │   ├── auth.ts
+│   │   └── tasks.ts
+│   ├── middleware/
+│   │   └── auth.ts
+│   ├── routes/
+│   │   ├── auth.ts
+│   │   └── tasks.ts
+│   ├── services/
+│   │   └── tasks.ts
+│   ├── types/
+│   │   └── task.ts
+│   └── app.ts
+├── .env
+├── .gitignore
+├── package.json
+├── package-lock.json
+└── README.md
 
 Environment Variables
 
@@ -52,7 +59,7 @@ SUPABASE_URL=your_supabase_url
 SUPABASE_ANON_KEY=your_supabase_anon_key
 PORT=3000
 
-Do not commit your real ".env" file or secret values to GitHub.
+Important: Never commit your real ".env" file or secret values to GitHub.
 
 Installation
 
@@ -88,9 +95,11 @@ The API uses Supabase Authentication.
 
 Signup
 
-POST /api/auth/signup
+POST
 
-Example body:
+/api/auth/signup
+
+Example request body:
 
 {
   "email": "your-email@example.com",
@@ -99,9 +108,11 @@ Example body:
 
 Login
 
-POST /api/auth/login
+POST
 
-Example body:
+/api/auth/login
+
+Example request body:
 
 {
   "email": "your-email@example.com",
@@ -110,7 +121,7 @@ Example body:
 
 Login returns an access token.
 
-Protected task requests must include:
+Protected requests must include:
 
 Authorization: Bearer <access_token>
 
@@ -118,30 +129,38 @@ Task API
 
 All task endpoints require authentication.
 
-Get all tasks
+Get All Tasks
 
-GET /api/tasks
+GET
 
-Get one task
+/api/tasks
 
-GET /api/tasks/:id
+Get One Task
 
-Create a task
+GET
 
-POST /api/tasks
+/api/tasks/:id
 
-Example body:
+Create a Task
+
+POST
+
+/api/tasks
+
+Example request body:
 
 {
   "title": "Learn Express API",
   "description": "Practice REST API development"
 }
 
-Update a task
+Update a Task
 
-PUT /api/tasks/:id
+PUT
 
-Example body:
+/api/tasks/:id
+
+Example request body:
 
 {
   "title": "Updated Task",
@@ -149,9 +168,11 @@ Example body:
   "completed": true
 }
 
-Delete a task
+Delete a Task
 
-DELETE /api/tasks/:id
+DELETE
+
+/api/tasks/:id
 
 API Testing
 
@@ -163,8 +184,8 @@ The following operations have been tested successfully:
 - Login
 - Authentication with Bearer token
 - Create task
-- Get tasks
-- Get a task by ID
+- Get all tasks
+- Get task by ID
 - Update task
 - Delete task
 - Invalid request handling
@@ -192,4 +213,4 @@ Supabase
 
 License
 
-This project is for learning and development purposes.
+This project is currently for learning and development purposes.
